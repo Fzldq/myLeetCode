@@ -1,4 +1,3 @@
-# Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -29,3 +28,6 @@ class Solution:
         head, tail = self.reverseList(head, tail)
         pre.next = head
         return hair.next
+
+
+# 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。

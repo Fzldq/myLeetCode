@@ -1,4 +1,3 @@
-# Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -18,5 +17,6 @@ class Solution:
                 while cur and cur.val == val:
                     cur = cur.next
             pre.next = cur
-            # print(pre)
         return dummy.next
+
+# 给定一个排序链表，删除所有含有重复数字的节点，只保留原始链表中 没有重复出现 的数字。

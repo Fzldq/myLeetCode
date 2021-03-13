@@ -1,5 +1,5 @@
 class Solution:
-    def minWindow(self, s: 'str', t: 'str') -> 'str':
+    def minWindow(self, s: str, t: str) -> str:
         from collections import defaultdict
         lookup = defaultdict(int)
         for c in t:
@@ -22,3 +22,10 @@ class Solution:
                 lookup[s[start]] += 1
                 start += 1
         return res
+
+
+# 给你一个字符串 S、一个字符串 T。
+# 请你设计一种算法，可以在 O(n) 的时间复杂度内，
+# 从字符串 S 里面找出：包含 T 所有字符的最小子串。
+# 输入：S = "ADOBECODEBANC", T = "ABC"
+# 输出："BANC"

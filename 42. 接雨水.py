@@ -1,28 +1,26 @@
 class Solution:
-    def trap(self, height) -> int:
-        n = len(height)
-        if n < 3:
+    def trap(self, height):
+        if not height:
             return 0
-        stack = []
-        res = 0
-        for idx, i in enumerate(height):
-
-            p_deep = 0
-            while stack:
-                pidx, pi = stack[-1]
-                if pi <= i:
-                    res += (idx - pidx - 1) * (pi - p_deep)
-                    p_deep = pi
-                    stack.pop()
-                elif pi > i:
-                    res += (idx - pidx - 1) * (i - p_deep)
-                    stack += [(idx, i)]
-                    break
+        n = len(height)
+        res = maxleft = maxright = 0
+        left, right = 0, n - 1
+        while left < right:
+            if maxleft < maxright:
+                if maxleft < height[left]:
+                    maxleft = height[left]
+                else:
+                    res += maxleft - height[left]
+                    left += 1
             else:
-                stack += [(idx, i)]
+                if maxright < height[right]:
+                    maxright = height[right]
+                else:
+                    res += maxright - height[right]
+                    right -= 1
         return res
 
 
-height = [4, 2, 3]
+height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 s = Solution()
 print(s.trap(height))

@@ -1,7 +1,7 @@
 # 和84一个道理
 
 class Solution:
-    def maximalRectangle(self, matrix: List[List[str]]) -> int:
+    def maximalRectangle(self, matrix) -> int:
         if not matrix:
             return 0
         m, n = len(matrix), len(matrix[0])
@@ -24,3 +24,13 @@ class Solution:
 
             res += [max((right[j] - left[j] - 1) * max_h[j] for j in range(n))]
         return max(res)
+
+
+# 输入:
+# [
+#   ["1","0","1","0","0"],
+#   ["1","0","1","1","1"],
+#   ["1","1","1","1","1"],
+#   ["1","0","0","1","0"]
+# ]
+# 输出: 6

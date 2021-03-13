@@ -88,7 +88,7 @@ class Solution2:
                     for x, y in [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]:
                         if 0 <= x < m and 0 <= y < n and grid[x][y] == '1':
                             self.union(i * n + j, x * n + y)
-        print(self.parent, 'size:', self.size)
+        # print(self.parent, 'size:', self.size)
         return self.count
 
 
