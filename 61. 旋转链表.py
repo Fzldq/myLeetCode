@@ -16,7 +16,7 @@ class Solution:
         tail.next = head
         k %= n
         newtail = head
-        for i in range(n - k - 1):
+        for _ in range(n - k - 1):
             newtail = newtail.next
         res = newtail.next
         newtail.next = None
